@@ -39,32 +39,32 @@ confsenha.addEventListener("keyup", () => {
 
 function cadastrar() {
   if (validNome && validSenha && validConfSenha) {
-    let Usuarios = JSON.parse(localStorage.getItem("Usuarios") || "[]");
+    let usuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
     
-    for (const user of Usuarios) {
+    for (const user of usuarios) {
       if (user.nome === nome.value) {
         Swal.fire({
-          icon: "error",
+          icon: "info",
           title: "Oops...",
           text: "Usuário ja cadastrado!",
-          footer: "tente novamente",
+          footer: "tente novamente"
         });
         return;
       }
     }
 
-    Usuarios.push({
+    usuarios.push({
       nome: nome.value,
-      senha: senha.value,
+      senha: senha.value
     });
-    localStorage.setItem("Usuarios", JSON.stringify(Usuarios));
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
     window.location.href = "../../login.html";
   } else {
     Swal.fire({
       icon: "error",
       title: "Oops...",
       text: "Dados inválidos!",
-      footer: "tente novamente",
+      footer: "tente novamente"
     });
   }
 }

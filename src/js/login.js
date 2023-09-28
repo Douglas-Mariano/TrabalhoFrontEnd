@@ -3,26 +3,19 @@ function login() {
   let password = document.getElementById("password").value;
 
   // Recuperar os usuários do Local Storage
-  let Usuarios = JSON.parse(localStorage.getItem("Usuarios") || "[]");
+  let usuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
 
-  // Iterar sobre os usuários para verificar o login
-  let usuarioEncontrado = false;
-
-  for (const user of Usuarios) {
+  for (const user of usuarios) {
     if (user.nome === name && user.senha === password) {
-      console.log("Login bem-sucedido!");
       window.location.href = "./src/html/buscaEndereco.html";
-      usuarioEncontrado = true;
       break;
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Usuário ou Senha incorreta!",
+        footer: "tente novamente"
+      });
     }
-  }
-
-  if (!usuarioEncontrado) {
-    Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Usuário ou Senha incorreta!",
-      footer: "tente novamente",
-    });
   }
 }

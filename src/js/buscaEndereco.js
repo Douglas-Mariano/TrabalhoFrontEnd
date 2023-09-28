@@ -22,7 +22,7 @@ function meu_callback(conteudo) {
       icon: "error",
       title: "Oops...",
       text: "CEP não encontrado!",
-      footer: "tente novamente",
+      footer: "tente novamente"
     });
   }
 }
