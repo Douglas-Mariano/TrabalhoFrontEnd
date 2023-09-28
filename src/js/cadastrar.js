@@ -40,9 +40,9 @@ confsenha.addEventListener("keyup", () => {
 function cadastrar() {
   if (validNome && validSenha && validConfSenha) {
     let Usuarios = JSON.parse(localStorage.getItem("Usuarios") || "[]");
-
+    
     for (const user of Usuarios) {
-      if (user.nome === nome) {
+      if (user.nome === nome.value) {
         Swal.fire({
           icon: "error",
           title: "Oops...",
@@ -68,4 +68,3 @@ function cadastrar() {
     });
   }
 }
-

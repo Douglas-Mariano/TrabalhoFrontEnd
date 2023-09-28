@@ -142,6 +142,6 @@ function atualizarCEP(event) {
 let inputCEP = document.getElementById("cep");
 inputCEP.addEventListener("input", atualizarCEP);
 
-function pagLogin(){
+function pagLogin() {
   window.location.href = "../../login.html";
 }
