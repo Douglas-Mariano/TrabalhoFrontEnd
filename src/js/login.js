@@ -19,14 +19,14 @@ function login() {
   for (const user of usuarios) {
     if (user.nome === name && user.senha === password) {
       window.location.href = "./src/html/buscaEndereco.html";
-      break;
-    } else {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Usuário ou Senha incorreta!",
-        footer: "tente novamente"
-      });
+      return;
     }
   }
+
+  Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: "Usuário ou Senha incorreta!",
+    footer: "tente novamente"
+  });
 }
