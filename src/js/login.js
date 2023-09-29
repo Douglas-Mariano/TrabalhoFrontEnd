@@ -10,7 +10,7 @@ function login() {
     Swal.fire({
       icon: "info",
       title: "Oops...",
-      text: "Não há usuários cadastrados!",
+      text: "Usuário cadastrado!",
       footer: "Cadastre-se primeiro"
     });
     return;
